@@ -218,7 +218,7 @@ function mostrarDatosUsuario(usuario) {
     <div class="card-body">
         <h4>Datos del Usuario:</h4>
         <p><strong>Nombre de Usuario:</strong> ${usuario.username}</p>
-        <p><strong>ID:</strong> ${usuario.id}</p>
+        <p><strong>ID:</strong> ${usuario._id}</p>
     </div>
     `;
 }

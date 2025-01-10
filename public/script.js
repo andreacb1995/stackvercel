@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
      };
  
      // Enviar los datos al servidor
-     fetch('https://stackvercel-lemon.vercel.app/api/crearusuario', {
+     fetch('http://localhost:3000/api/crearusuario', {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json'
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
           return;
       }
 
-      fetch(`https://stackvercel-lemon.vercel.app/api/usuarios/${usuarioId}`, {
+      fetch(`http://localhost:3000/api/usuarios/${usuarioId}`, {
           method: 'GET',
       })
       .then(response => {
@@ -157,7 +157,7 @@ function mostrarSeccion(seccion) {
  * Carga la lista de usuarios desde el servidor.
  */
 function cargarUsuarios() {
-    fetch('https://stackvercel-lemon.vercel.app/api/usuarios', {
+    fetch('http://localhost:3000/api/usuarios', {
       method: 'GET'
     })
     .then(response => response.json())
@@ -218,7 +218,7 @@ function mostrarDatosUsuario(usuario) {
     <div class="card-body">
         <h4>Datos del Usuario:</h4>
         <p><strong>Nombre de Usuario:</strong> ${usuario.username}</p>
-        <p><strong>ID:</strong> ${usuario._id}</p>
+        <p><strong>ID:</strong> ${usuario.id}</p>
     </div>
     `;
 }

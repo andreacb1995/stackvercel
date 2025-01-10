@@ -16,9 +16,19 @@
   app.use(cors());
 
   app.use(bodyParser.json());  // Asegúrate de que el cuerpo de la solicitud esté parseado como JSON
-  app.use(helmet());
   app.use(morgan('dev'));
   app.use(express.json());
+
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: ["'self'", "https://code.jquery.com", "https://stackpath.bootstrapcdn.com"],
+        },
+      },
+    })
+  );
 
   // Sirve archivos estáticos desde la carpeta "public"
   app.use(express.static(path.join(__dirname, '../public')));

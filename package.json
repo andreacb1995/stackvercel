@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node api/index.js",
     "dev": "nodemon api/index.js",
-    "lint": "eslint --fix src",
+    "lint": "eslint --fix api",
     "test": "jest"
   },
   "keywords": [],

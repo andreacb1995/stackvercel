@@ -14,7 +14,7 @@
 
   // Usar cors para permitir solicitudes desde cualquier origen (o especificar un origen)
   app.use(cors());
-  
+
   app.use(bodyParser.json());  // Asegúrate de que el cuerpo de la solicitud esté parseado como JSON
   app.use(helmet());
   app.use(morgan('dev'));
@@ -39,7 +39,11 @@
   // Ruta para obtener todos los usuarios
   app.get('/api/usuarios', async (req, res) => {
     try {
+      console.log('Consulta a la base de datos iniciada');
+
       const usuarios = await coleccion.find().toArray(); // Obtener todos los usuarios
+      console.log('Usuarios obtenidos:', usuarios);
+
       res.json(usuarios);
     } catch (err) {
       console.error('Error al consultar los usuarios: ', err);

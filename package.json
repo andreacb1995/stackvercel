@@ -4,16 +4,16 @@
   "description": "A basic starter for an express.js API",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js",
     "lint": "eslint --fix src",
     "test": "jest"
   },
   "keywords": [],
-  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
+  "author": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/w3cj/express-api-starter.git"
+    "url": ""
   },
   "license": "MIT",
   "dependencies": {

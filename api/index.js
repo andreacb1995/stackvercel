@@ -1,4 +1,5 @@
 
+  require('dotenv').config();
   const express = require('express');
   const app = express();
   const path = require('path');
@@ -8,9 +9,15 @@
   const bcrypt = require('bcrypt');
   const { ObjectId } = require('mongodb'); // Importar ObjectId
 
+  const helmet = require('helmet');
+  const morgan = require('morgan');
+
   // Usar cors para permitir solicitudes desde cualquier origen (o especificar un origen)
   app.use(cors());
   app.use(bodyParser.json());  // Asegúrate de que el cuerpo de la solicitud esté parseado como JSON
+  app.use(helmet());
+  app.use(morgan('dev'));
+  app.use(express.json());
 
   // Sirve archivos estáticos desde la carpeta "public"
   app.use(express.static(path.join(__dirname, '../public')));
@@ -29,7 +36,7 @@
   });
 
   // Ruta para obtener todos los usuarios
-  app.get('/usuarios', async (req, res) => {
+  app.get('/api/usuarios', async (req, res) => {
     try {
       const usuarios = await coleccion.find().toArray(); // Obtener todos los usuarios
       res.json(usuarios);
@@ -40,7 +47,7 @@
   });
 
   // Ruta para obtener un usuario por su ID
-  app.get('/usuarios/:id', async (req, res) => {
+  app.get('/api/usuarios/:id', async (req, res) => {
     const usuarioId = req.params.id;
 
     try {
@@ -63,7 +70,7 @@
   });
 
  // Ruta para crear un usuario
-app.post('/crearusuario', async (req, res) => {
+app.post('/api/crearusuario', async (req, res) => {
   const { username, password } = req.body;
 
   try {

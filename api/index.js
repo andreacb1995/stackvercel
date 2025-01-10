@@ -13,7 +13,13 @@
   const morgan = require('morgan');
 
   // Usar cors para permitir solicitudes desde cualquier origen (o especificar un origen)
-  app.use(cors());
+  //app.use(cors());
+  // Configurar CORS para permitir solicitudes desde el origen específico
+  app.use(cors({
+    origin: 'https://stackvercel-five.vercel.app', // Permitir solo este origen
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+  }));
+
   app.use(bodyParser.json());  // Asegúrate de que el cuerpo de la solicitud esté parseado como JSON
   app.use(helmet());
   app.use(morgan('dev'));

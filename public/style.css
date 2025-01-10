@@ -1,0 +1,45 @@
+/* Estilo general para el cuerpo de la página */
+body {
+  font-family: Arial, sans-serif; /* Tipografía de fuente principal */
+  background-color: #f4f4f9; /* Color de fondo */
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina relleno predeterminado */
+}
+
+/* Estilo para el encabezado */
+header {
+  background: linear-gradient(180deg, #343a40, #1c1f24); /* Gradiente de fondo */
+  color: white; /* Color del texto */
+  padding: 15px; /* Espaciado interno */
+  text-align: center; /* Centrar el texto */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilo para las tarjetas */
+.card {
+  background-color: var(--color-card-bg); /* Color de fondo de la tarjeta utilizando una variable */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centrar contenido dentro de la tarjeta */
+}
+
+/* Estilo para el contenedor del formulario de usuario */
+.formUsuario {
+  margin: 25px; /* Espaciado externo alrededor del formulario */
+  width: 170px; /* Ancho fijo del formulario */
+}
+
+/* Espaciado adicional para la barra de navegación */
+.nav {
+  margin-bottom: 25px; /* Espaciado inferior */
+}
+
+/* Estilo para el contenedor de resultados de búsqueda */
+#resultadoBusqueda {
+  padding: 15px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde con color claro */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Color de fondo */
+  margin-top: 20px; /* Espaciado superior */
+}

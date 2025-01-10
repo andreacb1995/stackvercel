@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <!-- Link a la librería de Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <!-- Link a la librería Bootstrap para estilos CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Archivo de estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <!-- Encabezado principal de la página -->
+    <header>
+        <h1>Gestión de Usuarios</h1>
+    </header>
+
+    <!-- Navegación con pestañas para seleccionar acciones -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <!-- Pestaña para listar usuarios -->
+            <a class="nav-link active" id="listarUsuarios" href="#">Listar Usuarios</a>
+        </li>
+        <li class="nav-item">
+            <!-- Pestaña para añadir un nuevo usuario -->
+            <a class="nav-link" id="addUsuario" href="#">Añadir Usuario</a>
+        </li>
+        <li class="nav-item">
+            <!-- Pestaña para buscar un usuario por ID -->
+            <a class="nav-link" id="buscarId" href="#">Buscar por ID</a>
+        </li>
+    </ul>
+
+    <!-- Contenedor para mostrar las tarjetas de usuarios -->
+    <div id="tarjetasUsuarios" class="card-deck"></div>
+
+    <!-- Formulario para crear un nuevo usuario -->
+    <div id="CrearUsuario" class="formUsuario" style="display: none;">
+        <form id="formCrearUsuario">
+            <div class="form-group">
+                <label>Usuario</label>
+                <!-- Campo de texto para el nombre de usuario -->
+                <input type="text" class="form-control" id="username" placeholder="Nombre de usuario">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <!-- Campo para introducir la contraseña -->
+                <input type="password" class="form-control" id="clave" placeholder="Password">
+            </div>
+            <!-- Botón para guardar el usuario -->
+            <button type="submit" name="guardar" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+
+    <!-- Barra de navegación para buscar un usuario por ID -->
+    <nav id="BuscarUsuario" class="navbar navbar-light bg-light" style="display: none;">
+        <form class="form-inline">
+            <!-- Campo de búsqueda para ingresar el ID del usuario -->
+            <input class="form-control mr-sm-2" id="usuarioId" type="search" placeholder="Buscar" aria-label="Buscar">
+            <!-- Botón para realizar la búsqueda -->
+            <button class="btn btn-primary my-2 my-sm-0" type="submit" name="buscar">Buscar</button>
+        </form>
+    </nav>
+
+    <!-- Contenedor para mostrar resultados o mensajes de error -->
+    <div id="resultadoBusqueda" style="margin-top: 20px; display: none"></div>
+    <!-- Tarjeta para mostrar los datos de un usuario específico -->
+    <div class="card" id="mostrarusuario" style="display: none"></div>
+
+    <!-- Librerías de JavaScript necesarias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Archivo de JavaScript para manejar la lógica del formulario y el modal -->
+    <script src="script.js"></script>
+</body>
+</html>

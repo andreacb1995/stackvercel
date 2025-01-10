@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-const uri = 'mongodb+srv://andreacarballidoballesteros:NoayArya2619@cluster0.43rf0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = process.env.MONGODB_URI; // Lee la URI desde el archivo .env
 const cliente = new MongoClient(uri); 
 
 async function conectarDB() {
